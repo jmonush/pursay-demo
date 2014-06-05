@@ -1,3 +1,40 @@
 %ul.slider{:data => {:orbit => ""}}
   %li Blurb 1
   %li Blurb 2
+.row
+  .large-6.columns
+    .panel
+    
+      %h2 Love to Shop?
+      .small-4.columns.small-centered
+        %a.button.expand{:href => "#", :data => {:reveal => {:id => "shopper"}}} Click here.
+      %div#shopper.reveal-modal{:data => {:reveal => ""}}
+        %h3 Fill out this Form
+        =form_for Inquiry.new() do |f|
+          %table{:style => "width:100%;"}
+            %tbody
+              %tr
+                %td=f.label :first_name
+                %td=f.text_field :first_name
+              %tr
+                %td=f.label :last_name
+                %td=f.text_field :last_name
+              %tr
+                %td{:colspan => "2"}=f.submit
+      .panel
+        .row
+          .small-12.columns
+            Fill out form in future.
+  .large-6.columns
+    .panel
+      %h2 Retailer?
+      .small-4.columns.small-centered
+        %a.button.expand{:href => "#", :data => {:reveal => {:id => "retailer"}}} Click here.
+      %div#retailer.reveal-modal{:data => {:reveal => ""}}
+        %h3 Fill out this Form
+        =form_for Inquiry.new() do |f|
+          %table{:style => "width:100%;"}
+            %tbody
+              %tr
+                %td=f.label :store_name
+                %td=f.text_field :store_name
